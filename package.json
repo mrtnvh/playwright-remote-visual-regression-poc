@@ -1,0 +1,19 @@
+{
+  "name": "playwright-remote-visual-regression",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "playwright test",
+    "browsers:docker": "docker run -it --rm --ipc=host  -v $PWD:/project -p 9200-9299:9200-9299 -w /project --tmpfs /project/node_modules:rw mcr.microsoft.com/playwright:v1.44.0-jammy /bin/bash -c \"npm ci && node scripts/launch.mjs\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0",
+    "@types/node": "^20.12.12",
+    "defu": "^6.1.4"
+  }
+}
